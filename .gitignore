@@ -1,0 +1,31 @@
+# Dependencies & build output
+node_modules/
+web/dist/
+web/tsconfig.tsbuildinfo
+
+# Stray tsc output next to the TypeScript sources (build uses --noEmit)
+web/src/**/*.js
+web/vite.config.js
+
+# Secrets & local config
+.env
+.env.*
+!.env.example
+.claude/
+
+# Local data (users, password hashes, audit log)
+server/data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Private docs
+docs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

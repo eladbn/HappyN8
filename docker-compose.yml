@@ -1,0 +1,17 @@
+services:
+  happyn8:
+    build: .
+    image: happyn8:latest
+    container_name: happyn8
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      # FLOWBOARD_PORT = port on the server; PORT = port HappyN8 listens on inside the container.
+      - "${FLOWBOARD_PORT:-45310}:${PORT:-8080}"
+    volumes:
+      # HappyN8's own data: users, passwords (hashed) and the activity log.
+      # The volume keeps its original name so existing users and history carry over.
+      - flowboard-data:/data
+
+volumes:
+  flowboard-data:

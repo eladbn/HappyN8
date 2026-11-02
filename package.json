@@ -1,0 +1,10 @@
+{
+  "name": "happyn8",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix web run build",
+    "test": "npm --prefix server test && npm --prefix web test",
+    "dev:server": "npm --prefix server run dev",
+    "dev:web": "npm --prefix web run dev"
+  }
+}
