@@ -8,6 +8,7 @@ import { NodeIcon, Spinner, StatusChip, errMsg } from '../components/ui';
 import { nodeIO, runOrder } from '../lib/execution';
 import { preview, timeAgo } from '../lib/format';
 import { aiLabel } from '../lib/ports';
+import { newId } from '../lib/workflow';
 
 const AGENT_TYPES = new Set(['@n8n/n8n-nodes-langchain.agent', '@n8n/n8n-nodes-langchain.agentTool', '@n8n/n8n-nodes-langchain.openAiAssistant']);
 const CHAT = '@n8n/n8n-nodes-langchain.chatTrigger';
@@ -168,7 +169,7 @@ function AgentDetail({ info }: { info: AgentInfo }) {
 }
 
 function ChatBox({ wf }: { wf: Workflow }) {
-  const [sessionId] = useState(() => crypto.randomUUID());
+  const [sessionId] = useState(() => newId());
   const [msgs, setMsgs] = useState<Array<{ who: 'me' | 'agent' | 'error'; text: string }>>([]);
   const [text, setText] = useState('');
   const [busy, setBusy] = useState(false);
