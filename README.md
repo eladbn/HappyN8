@@ -9,6 +9,18 @@
 
 ---
 
+## See it in action
+
+These screenshots show HappyN8 connected to n8n with illustrative data. They do not show a real workspace.
+
+**Find and manage workflows.** Browse runs and status, filter by app or trigger, and activate workflows from one place.
+
+![HappyN8 workflow list with example automations, run status, and n8n connection](assets/screenshots/workflows.png)
+
+**Inspect executions.** See which modules ran, their status, item counts, and timing without opening the n8n owner account.
+
+![HappyN8 execution list and module-by-module run details using example data](assets/screenshots/executions.png)
+
 ## What it is
 
 HappyN8 sits in front of an existing n8n instance and talks to it through the n8n API. It gives a team a
@@ -107,3 +119,9 @@ npm test             # server (node:test) + web (vitest)
 - Sign-in is rate limited per client.
 - The n8n API key and n8n login stay on the server and are never sent to the browser.
 - Put HappyN8 behind HTTPS (and set `COOKIE_SECURE=true`) if it is reachable beyond a trusted network.
+
+## License
+
+HappyN8 is available under the [PolyForm Noncommercial License 1.0.0](LICENSE.md). You may use, change, and share it for permitted noncommercial purposes. Commercial use requires separate permission from the project owner. This is a **source-available**, not an OSI-approved open-source, license.
+
+This license covers HappyN8's own code and screenshots, not n8n or third-party dependencies. n8n has [separate license terms](https://support.n8n.io/article/can-i-use-your-license-for-my-use-case); giving people outside your organization access to build or configure n8n workflows through HappyN8 may require a commercial n8n license. Check the n8n terms for your deployment.
